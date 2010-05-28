@@ -1,6 +1,53 @@
-Open Timestream is an open-source calendaring framework.
+Project:
+OpenTimestream
+
+Synposis:
+An open source web-based datetime system. Can be used for scheduling, tasks, viewing calendars.
 
 Collaborators:
--Tim Habersack
--Brian Tanaka
+Tim Habersack
+Brian Tanaka
 
+Features:
+  * User Accounts
+  	* Create New User
+  	* Change User info
+  	* Log in
+  	* Log off
+
+  * Calendar
+  	* Create new calendar
+  	  * Private Y/N
+  	* Event
+   	  * Create new Event
+  	  * View Event  	  
+  	  * Edit Event
+  	  * Remove Event
+  	* Task
+   	  * Create new Task
+  	  * View Task  	  
+  	  * Edit Task
+  	  * Remove Task
+  	* Alarm
+  	  * Ability of Task / Event to have an alarm
+    * View Events / Tasks
+      * List View, ex. Backpackit
+      * Linear View
+      * Standard Monthly View
+  	  
+  * iCalendar
+  	* Generate feed; /feed/ical/username/calname
+  	* Caching feed
+
+
+Phase One:
+Crazy Simple.  User is hard-coded in, no login. Ability to add a todo item, and view todo items in simple list.
+
+Phase Two:
+User Creation and login.  Ability to create calendar(s), set private y/n.  Add Event functionality, view in simple list.
+
+Phase Three:
+iCalendar feed generation (ex. /feed/ical/username/calname).  Using caching on feed.  Make List (Backpackit) view, with checkboxes for todo items.  JQuery, disapear when checked.
+
+Phase Four:
+User Account settings: timestamp preferred, etc.  Various calendaring views; modular.

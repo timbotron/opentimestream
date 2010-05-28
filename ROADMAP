@@ -1,3 +1,7 @@
 # priority : description : person
 
-3 : add more items : tim.habersack
+::Phase 1
+2 : Task table design : tim.habersack
+2 : add Task form : tim.habersack
+2 : add Task form validation : tim.habersack
+3 : view Tasks report : tim.habersack
