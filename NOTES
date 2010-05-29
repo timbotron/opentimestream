@@ -5,21 +5,22 @@ field : description
 `id`  : standard
 `userid`  : users int value which will eventually be in users table
 `uid`  :  the uid of VTODO, will be timestamp . userid
-`dtstamp`  : utc timestamp of when todo item created
-`due`  : utc timestamp of when todo item due
+`dtstamp`  : utc datetime of when todo item created
+`due`  : utc datetime of when todo item due
 `status`  : 0=NEEDS-ACTION, 1=COMPLETED
 `summary`  : actual text of todo item
 `alarm`  : if it has alarm associated with todo item, for ical purposes. will associate with alarm table via uid
 
 
-CREATE TABLE `otsdb`.`ots_todo` (
-`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`userid` INT UNSIGNED NOT NULL ,
-`uid` INT NOT NULL ,
-`dtstamp` INT UNSIGNED NOT NULL ,
-`due` INT UNSIGNED NOT NULL ,
-`status` TINYINT( 1 ) NOT NULL ,
-`summary` TEXT NOT NULL ,
-`alarm` TINYINT( 1 ) NOT NULL ,
-INDEX ( `userid` , `uid` , `due` , `status` , `alarm` )
-) ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `ots_todo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `userid` int(10) unsigned NOT NULL,
+  `uid` int(11) NOT NULL,
+  `dtstamp` datetime NOT NULL,
+  `due` datetime NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `summary` text NOT NULL,
+  `alarm` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `userid` (`userid`,`uid`,`due`,`status`,`alarm`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
