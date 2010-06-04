@@ -11,7 +11,15 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://example.com/";
+// set the base site url proper for this host.
+// note: we can use this same trick for production
+$hostname = exec('hostname'); // get the hostname of this machine
+chop($hostname); // choppy
+if ( $hostname == "Macintosh-3.local" ) { 
+	$config['base_url']	= "http://localstream.com:8888/"; // mac
+} else {
+	$config['base_url']	= "http://localstream.com/"; // linux vhost
+}
 
 /*
 |--------------------------------------------------------------------------

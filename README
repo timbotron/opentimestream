@@ -12,6 +12,8 @@ Features:
   * User Accounts
   	* Create New User
   	* Change User info
+  	  * 12 or 24 hr preference
+  	  * Time zone //BIGGIE
   	* Log in
   	* Log off
 
