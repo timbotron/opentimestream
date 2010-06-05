@@ -24,21 +24,15 @@ class Add_todo extends Controller {
 		
 		if ($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('add_todo_input');
+			$this->load->view('add_todo_input');  //form validation failed
 		}
 		else
 		{
+			//form data ok, entering to db
 			$this->load->database();
-			$itemtime = $this->input->post('day') . " " . $this->input->post('hour');
-			$itemtime = strtotime($itemtime);
+			$this->load->model('Db_mojo');
+			$this->Db_mojo->insert_todo();
 			
-			//YYYY-MM-DD HH:MM:SS
-			$itemtime = date("Y-m-d H:i:s",$itemtime);  //need to do mojo for timezones
-			$uid = date("dHs"); //need to figure out actual uid design
-			$nowdate = date("Y-m-d H:i:s");
-			$data = array('id'=>'','userid'=>1,'uid'=>$uid,'dtstamp'=>$nowdate,'due'=>$itemtime,'status'=>0,'summary'=>$this->input->post('summary'),'alarm'=>0);
-			
-			$this->db->insert('ots_todo',$data);
 			$this->load->view('success');
 		}
 		
@@ -61,5 +55,5 @@ class Add_todo extends Controller {
 }
 
 
-/* End of file Add_todo.php */
+/* End of file add_todo.php */
 /* Location: ./system/application/controllers/add_todo.php */
