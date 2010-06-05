@@ -29,8 +29,7 @@ class Add_todo extends Controller {
 		else
 		{
 			//form data ok, entering to db
-			$this->load->database();
-			$this->load->model('Db_mojo');
+			$this->load->model('Db_mojo','',TRUE);  //the TRUE means to have the model connect to the db
 			$this->Db_mojo->insert_todo();
 			
 			$this->load->view('success');

@@ -31,9 +31,15 @@ class Db_mojo extends Model
 		$this->summary = $this->input->post('summary');
 		$this->status = 0;
 		$this->alarm = 0;
-		//$data = array('id'=>'','userid'=>1,'uid'=>$uid,'dtstamp'=>$nowdate,'due'=>$itemtime,'status'=>0,'summary'=>$this->input->post('summary'),'alarm'=>0);
 		
 		$this->db->insert('ots_todo',$this);        
+    }
+    
+    //just a proof of concept function, to return values of user 1 todo's items
+    function usercal()
+    {
+    	$query = $this->db->query('SELECT due, summary FROM ots_todo WHERE status=0 AND userid=1 ORDER BY due ASC');
+   		return $query->result();
     }
 
 }

@@ -6,6 +6,6 @@
 
 <h2>Sounds great! How do I get started?</h2>
 <p>
-Things are still under construction, but feel free to <a href="/add_todo">add some to-do items!</a>
+Things are still under construction, but feel free to <a href="/add_todo">add some to-do items</a> or view user 1's <a href="/simpleshow">todo items.</a> 
 </p>
 
